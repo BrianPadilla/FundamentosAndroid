@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contentMain">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#878787"
+        app:srcCompat="@drawable/ic_image" />
+
+    <ImageView
+        android:id="@+id/imvclear"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#302D2D"
+        app:srcCompat="@drawable/ic_clear"
+        android:layout_alignParentEnd="true">
+
+    </ImageView>
+
+      <ImageView
+          android:id="@+id/imagesmall"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="#302D2D"
+          app:srcCompat="@drawable/ic_image"
+          android:layout_alignParentEnd="true"
+          android:layout_below="@id/imvclear">
+
+      </ImageView>
+
+      <ImageView
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="#302D2D"
+          app:srcCompat="@drawable/ic_transform"
+          android:layout_alignParentEnd="true"
+          android:layout_below="@id/imagesmall">
+
+      </ImageView>
+  </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellidos"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etFechaNac"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+

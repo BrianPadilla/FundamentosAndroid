@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AddArtistActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imagefoto"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app.bar.height"
+                android:background="@android:color/darker_gray"
+                app:srcCompat="@drawable/ic_image"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="vertical">
+                
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/AppTheme.ImageViewButton"
+                    android:id="@+id/imagedeletefoto"
+                    app:srcCompat="@drawable/ic_close_box"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/AppTheme.ImageViewButton"
+                    android:id="@+id/imgFromGallery"
+                    app:srcCompat="@drawable/ic_imagegallery"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/AppTheme.ImageViewButton"
+                    android:id="@+id/imgFromURL"
+                    app:srcCompat="@drawable/ic_earth_box"/>
+
+            </LinearLayout>
+            
+        </FrameLayout>
+        
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/artist.hint.nombre"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="@integer/nombre.maxLenght"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/artist.hint.apellidos"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="@integer/nombre.maxLenght"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+            
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFechaNacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/artist.hint.fechanacimiento"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEstatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/artist.hint.estatura"
+                    android:inputType="number"
+                    android:maxLength="@integer/estatura.maxLenght"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLugarNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/artist.hint.lugarnacimiento"
+                android:inputType="textAutoComplete"
+                android:maxLength="@integer/lugarnacimiento.maxLenght"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNotas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/artist.hint.notas"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:maxLength="@integer/notas.maxLenght"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</ScrollView>

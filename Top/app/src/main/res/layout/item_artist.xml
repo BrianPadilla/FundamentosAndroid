@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/containerMain"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imagefoto"
+            android:layout_width="@dimen/image.item.size"
+            android:layout_height="@dimen/image.item.size"
+            app:srcCompat="@drawable/ic_account_box"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+        
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/artist.hint.nombre"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_margin="@dimen/main.padding.small"
+            android:layout_toEndOf="@id/imagefoto"
+            android:layout_toStartOf="@id/tvOrden"
+            android:layout_centerVertical="true"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/artist.hint.orden"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_margin="@dimen/main.padding.small"
+            android:drawableBottom="@drawable/ic_star"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
