@@ -111,17 +111,47 @@ public class AddArtistActivity extends AppCompatActivity implements DatePickerDi
         mArtista.setLugarNacimiento(etLugarNacimiento.getText().toString().trim());
         mArtista.setNotas(etNotas.getText().toString().trim());*/
 
-        MainActivity.sArtista.setNombre(etNombre.getText().toString().trim());
-        MainActivity.sArtista.setApellidos(etApellidos.getText().toString().trim());
-        MainActivity.sArtista.setEstatura(Short.valueOf(etEstatura.getText().toString().trim()));
-        MainActivity.sArtista.setLugarNacimiento(etLugarNacimiento.getText().toString().trim());
-        MainActivity.sArtista.setNotas(etNotas.getText().toString().trim());
-        MainActivity.sArtista.setOrden(mArtista.getOrden());
-        MainActivity.sArtista.setFotoUrl(mArtista.getFotoUrl());
+        if (validateFields()) {
+            MainActivity.sArtista.setNombre(etNombre.getText().toString().trim());
+            MainActivity.sArtista.setApellidos(etApellidos.getText().toString().trim());
+            MainActivity.sArtista.setEstatura(Short.valueOf(etEstatura.getText().toString().trim()));
+            MainActivity.sArtista.setLugarNacimiento(etLugarNacimiento.getText().toString().trim());
+            MainActivity.sArtista.setNotas(etNotas.getText().toString().trim());
+            MainActivity.sArtista.setOrden(mArtista.getOrden());
+            MainActivity.sArtista.setFotoUrl(mArtista.getFotoUrl());
 
-        setResult(RESULT_OK);
-        finish();
+            setResult(RESULT_OK);
+            finish();
+        }
 
+    }
+
+    private boolean validateFields() {
+
+        boolean isValid = true;
+
+        if(etEstatura.getText().toString().trim().isEmpty() ||
+                Integer.valueOf(etEstatura.getText().toString().trim()) < getResources().getInteger(R.integer.estatura_min)){
+            etEstatura.setError(getString(R.string.addArtist_error_estaturaMin));
+            etEstatura.requestFocus();
+            isValid = false;
+
+        }
+
+        if(etApellidos.getText().toString().trim().isEmpty()){
+            etApellidos.setError(getString(R.string.addArtist_error_required));
+            etApellidos.requestFocus();
+            isValid = false;
+        }
+
+        if(etNombre.getText().toString().trim().isEmpty()){
+            etNombre.setError(getString(R.string.addArtist_error_required));
+            etNombre.requestFocus();
+            isValid = false;
+        }
+
+
+        return isValid;
     }
 
     @OnClick(R.id.etFechaNacimiento)

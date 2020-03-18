@@ -6,4 +6,6 @@
     <dimen name="imageview.margin">2dp</dimen>
     <dimen name="imageView.inset">-4dp</dimen>
     <dimen name="imageView.radius">18dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>
